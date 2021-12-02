@@ -1,0 +1,3 @@
+#!/bin/bash
+
+awk 'BEGIN { INCREASES=0; PREVIOUS=0 } { if (FNR>1 && $1>PREVIOUS) INCREASES++; PREVIOUS=$1 } END { print INCREASES }' $1
